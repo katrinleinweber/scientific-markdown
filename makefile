@@ -6,7 +6,7 @@ all:
 	presentation
 
 presentation:
-	scholdoc \
+	pandoc \
 		--slide-level 2 \
 		--from markdown+yaml_metadata_block+table_captions \
 		--to beamer \
@@ -21,7 +21,7 @@ presentation:
 	latexmk -pdflatex="pdflatex --shell-escape %O %S" -pdf presentation.tex
 
 report:
-	scholdoc \
+	pandoc \
 		--from markdown+yaml_metadata_block+table_captions \
 		--to latex \
 		--variable documentclass=article \
